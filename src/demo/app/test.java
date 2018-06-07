@@ -26,7 +26,7 @@ public class test extends HttpServlet {
 			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "123456");
 			
 			switch(select) {
-			case 1:
+			case 1:	//For Insertion
 				String ins1=req.getParameter("name").toString();
 				String ins2=req.getParameter("mobile").toString();
 				String ins3=req.getParameter("email").toString();
@@ -45,7 +45,7 @@ public class test extends HttpServlet {
 				
 				
 				break;
-			case 2:
+			case 2:		// For Updation
 				String upd1=req.getParameter("name").toString();
 				String upd2=req.getParameter("mobile").toString();
 				String upd3=req.getParameter("email").toString();
@@ -59,7 +59,7 @@ public class test extends HttpServlet {
 				RequestDispatcher rdu=req.getRequestDispatcher("index.html");
 				rdu.include(req, resp);
 				break;
-			case 3:
+			case 3:	//For Deletion
 				String del1=req.getParameter("name").toString();
 				PreparedStatement dest=con.prepareStatement("delete from Loan where name=?");  
 				dest.setString(1,del1);
@@ -69,7 +69,7 @@ public class test extends HttpServlet {
 				RequestDispatcher rdd=req.getRequestDispatcher("index.html");
 						rdd.include(req, resp);
 				break;
-			case 4:
+			case 4:	//For Selection/ Retrieve
 				Statement sel=con.createStatement();
 				ResultSet rs=sel.executeQuery("select * from Loan");
 				out.println("<table border='1' align='center'><tr><th>Name</th><th>Mobile</th><th>Email</th><th>Password</th></tr>");
