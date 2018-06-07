@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Jdbc Operations</title>
+<link rel="stylesheet" type="text/css" href="theme.css">
+<style type="text/css">
+.header {
+  overflow: hidden;
+  background-color: #4CAF50;
+  padding: 20px 10px;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+  			<a href="index.html" class="logo">JDBC Operations through Servlet</a>
+	</div>
+	<hr>
+	<form action="Demo" method="post">
+	<table align="center" >
+		<tr>
+		<th>
+		<select name="s1">
+			<option value=0>----Select----</option>
+			<option value=1 onclick="myInsert()">Insert</option>
+			<option value=2 onclick="myUpdate()">Update</option>
+			<option value=3 onclick="myDelete()">Delete</option>
+			<option value=4 onclick="mySelect()">Retrieve</option>
+		</select>
+		</th>
+		</tr>
+		<tr>
+		<td><input type="text" placeholder="Enter Your Name" name="name" id="name"/></td>
+		</tr>
+		<tr>
+			<th><label id="l1"></label></th>
+		</tr>
+		<tr>
+		<td><input type="tel" placeholder="Enter Your mobile No" name="mobile" id="mobile"/></td>
+		</tr>
+		<tr>
+			
+		</tr>
+		<tr>
+		<td><input type="email" placeholder="Enter Your Email" name="email" id="email"/></td>
+		</tr>
+		<tr>
+			
+		</tr>
+		<tr>
+		<td><input type="password" placeholder="Enter Your password" name="password" id="password"/></td>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+		<td><button>Submit</button> <button type="reset">Reset</button></td>
+		</tr>
+		<tr>
+			
+		</tr>
+		<tr>
+			  <td><p name="value"></p>
+		</tr>
+		
+	</table>
+	</form>
+	<hr>
+	<p class="header" align="center">&copy; 2018  By Pavan Ponnada<p>
+<script>
+function myInsert() {
+    document.getElementById("name").disabled = false;
+	document.getElementById("mobile").disabled = false;
+	document.getElementById("email").disabled = false;
+	document.getElementById("password").disabled = false;
+	document.getElementById("l1").innerHTML ="";
+}
+</script>
+<script>
+function myUpdate() {
+    document.getElementById("name").disabled = false;
+	document.getElementById("mobile").disabled = false;
+	document.getElementById("email").disabled = false;
+	document.getElementById("password").disabled = true;
+	document.getElementById("l1").innerHTML = "Through Name you can Update";
+}
+</script>
+<script>
+function myDelete() {
+    document.getElementById("name").disabled = false;
+	document.getElementById("mobile").disabled = true;
+	document.getElementById("email").disabled = true;
+	document.getElementById("password").disabled = true;
+	document.getElementById("l1").innerHTML ="Through Name you can Delete";
+}
+</script>
+<script>
+function mySelect() {
+    document.getElementById("name").disabled = true;
+	document.getElementById("mobile").disabled = true;
+	document.getElementById("email").disabled = true;
+	document.getElementById("password").disabled = true;
+	document.getElementById("l1").innerHTML ="";
+}
+</script>
+	
+</body>
+</html>
